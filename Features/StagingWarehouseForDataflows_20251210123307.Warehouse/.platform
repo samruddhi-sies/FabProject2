@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "StagingWarehouseForDataflows_20251210123307"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fc6be856-d463-8caf-49ff-dd2463a39574"
+  }
+}

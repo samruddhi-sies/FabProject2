@@ -22,13 +22,8 @@
 
 # CELL ********************
 
-# MAGIC %%configure
-# MAGIC {
-# MAGIC   "defaultLakehouse": {
-# MAGIC     "name": "myLake1"
-# MAGIC   }
-# MAGIC }
-# MAGIC 
+# Welcome to your new notebook
+# Type here in the cell editor to add code!
 
 
 # METADATA ********************
@@ -40,52 +35,38 @@
 
 # CELL ********************
 
-# MAGIC %%sql
-# MAGIC CREATE TABLE products
-# MAGIC USING DELTA
-# MAGIC LOCATION 'Files/external_products';
-
-# METADATA ********************
-
-# META {
-# META   "language": "sparksql",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-# MAGIC %%sql
-# MAGIC 
-# MAGIC CREATE EXTERNAL TABLE ProductsJson (
-# MAGIC     id INT,
-# MAGIC     name STRING,
-# MAGIC     category STRING,
-# MAGIC     price INT,
-# MAGIC     inStock BOOLEAN,
-# MAGIC     rating DECIMAL(3,1)
-# MAGIC )
-# MAGIC USING JSON
-# MAGIC LOCATION 'Files/products/';
-# MAGIC 
-# MAGIC 
-# MAGIC 
-
-
-# METADATA ********************
-
-# META {
-# META   "language": "sparksql",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-df = spark.sql("SELECT * FROM myLake1.productsjson LIMIT 1000")
+df = spark.sql("SELECT * FROM myLake1.my_products LIMIT 1000")
 display(df)
 
 # METADATA ********************
 
 # META {
 # META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+# MAGIC %%sql
+# MAGIC 
+# MAGIC UPDATE my_products SET ListPrice=100 WHERE ProductID=771;
+
+# METADATA ********************
+
+# META {
+# META   "language": "sparksql",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+# MAGIC %%sql
+# MAGIC 
+# MAGIC SELECT * FROM my_products
+
+# METADATA ********************
+
+# META {
+# META   "language": "sparksql",
 # META   "language_group": "synapse_pyspark"
 # META }
