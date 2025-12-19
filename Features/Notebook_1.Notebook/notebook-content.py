@@ -22,6 +22,17 @@
 
 # CELL ********************
 
+print("hi")
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
 # MAGIC %%configure
 # MAGIC {
 # MAGIC   "defaultLakehouse": {
